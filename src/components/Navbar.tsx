@@ -67,10 +67,9 @@ const Navbar = () => {
 
   return (
     <nav 
-      data-aos="fade-down"
       className={`fixed w-full z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg'
+          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg nv'
           : 'bg-transparent'
       }`}
     >

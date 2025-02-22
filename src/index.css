@@ -32,6 +32,13 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(9.1px);
 -webkit-backdrop-filter: blur(9.1px);
 }
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
 
 
 body {
@@ -44,7 +51,12 @@ body {
 .ss{
   color: #3949AB;
 }
-
+.nv1{
+  .container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }  
+}
 
 body::-webkit-scrollbar {
   width: var(--sb-size)
