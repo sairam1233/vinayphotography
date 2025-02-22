@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -57,23 +60,24 @@ const Testimonials = () => {
     <section id="testimonials" className="py-20 bg-gradient-to-b from-indigo-50 to-white dark:from-gray-800 dark:to-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 relative inline-block">
+          <h2 data-aos="fade-up" className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 relative inline-block">
             Client Testimonials
             <div className="absolute -bottom-4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-8">
+          <p data-aos="fade-up" className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-8">
             Hear what our clients have to say about their experience working with us.
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div  className="relative max-w-4xl mx-auto">
           <div className="absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-indigo-100 dark:text-gray-800/30 pointer-events-none">
             <Quote size={160} className="transform -scale-x-100" />
           </div>
 
-          <div className="relative z-10">
+          <div data-aos="fade-up" className="relative z-10">
             {testimonials.map((testimonial, index) => (
               <div
+                
                 key={index}
                 className={`transition-all duration-700 ${
                   index === currentTestimonial

@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { X } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -38,13 +41,14 @@ const Gallery = () => {
   return (
     <section id="gallery" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
+        <h2 data-aos="fade-up" className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
           Our Portfolio
         </h2>
         
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           {categories.map((category) => (
             <button
+              data-aos="fade-up"
               key={category}
               onClick={() => setSelectedCategory(category.toLowerCase())}
               className={`px-4 py-2 rounded-full transition-colors duration-200 ${
@@ -61,6 +65,7 @@ const Gallery = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredImages.map((image, index) => (
             <div
+              data-aos="fade-up"
               key={index}
               className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group"
               onClick={() => setSelectedImage(image.url)}

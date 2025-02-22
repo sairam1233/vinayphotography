@@ -38,7 +38,13 @@ body {
   --sb-track-color:dark;
   --sb-thumb-color: #3949AB;
   --sb-size: 10px;
+  scroll-behavior: smooth !important;
+  overflow-x: hidden;
 }
+.ss{
+  color: #3949AB;
+}
+
 
 body::-webkit-scrollbar {
   width: var(--sb-size)

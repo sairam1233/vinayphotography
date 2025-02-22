@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +36,7 @@ const Navbar = () => {
 
   const navLinks = ['Home', 'About', 'Gallery', 'Services', 'Packages', 'Testimonials', 'Contact'];
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
 
     if (sectionId.toLowerCase() === 'home') {
@@ -63,7 +66,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav
+    <nav 
+      data-aos="fade-down"
       className={`fixed w-full z-40 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg'

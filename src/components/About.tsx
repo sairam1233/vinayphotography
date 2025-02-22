@@ -1,5 +1,7 @@
-import React from 'react';
 import { Camera, Award, Users, Heart } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const About = () => {
   const stats = [
@@ -9,32 +11,40 @@ const About = () => {
     { icon: Heart, value: '50+', label: 'Awards Won' }
   ];
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="about" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 data-aos="fade-right" className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
               About Our Studio
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+            <p data-aos="fade-right" className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               With over 15 years of experience in professional photography, we've built a reputation
               for excellence in capturing life's most precious moments. Our passion for photography
               goes beyond just taking pictures – we create timeless memories that tell your unique story.
             </p>
-            <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+            <p data-aos="fade-right" className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
               Our team of skilled photographers combines technical expertise with artistic vision
               to deliver stunning results that exceed expectations. Whether it's a wedding, corporate
               event, or personal portrait session, we approach each project with dedication and creativity.
             </p>
-            <button className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-200">
-              Learn More
+            <button onClick={scrollToContact} data-aos="fade-right" className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 py-3 rounded-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-200">
+              Contact
             </button>
           </div>
           
           <div className="grid grid-cols-2 gap-6">
             {stats.map((stat, index) => (
               <div
+                data-aos="fade-left"
                 key={index}
                 className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg text-center"
               >

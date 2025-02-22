@@ -1,6 +1,8 @@
-import React from 'react';
 import { Check, Camera, Users, Video, Star } from 'lucide-react';
 import toast from 'react-hot-toast';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const Packages = () => {
   const handleBooking = (packageName: string) => {
@@ -80,38 +82,39 @@ const Packages = () => {
     <section id="packages" className="py-20 bg-gradient-to-b from-white via-indigo-50/30 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 relative inline-block">
+          <h2 data-aos="fade-up" className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 relative inline-block">
             Our Packages
             <div className="absolute -bottom-4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-8">
+          <p data-aos="fade-up" className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-8">
             Choose the perfect package for your photography needs. Each package is customizable
             to ensure you get exactly what you're looking for.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <div data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {packages.map((pkg, index) => (
             <div
+              data-aos="fade-up"
               key={index}
               className={`relative group transition-all duration-300 transform hover:-translate-y-2 ${
                 pkg.popular ? 'lg:-mt-8 lg:mb-8' : ''
               }`}
             >
               {pkg.popular && (
-                <div className="absolute -top-5 left-0 right-0 flex justify-center">
+                <div  className="absolute -top-5 left-0 right-0 flex justify-center">
                   <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-1">
                     <Star className="w-4 h-4 fill-current" /> Most Popular
                   </div>
                 </div>
               )}
               
-              <div className={`h-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 ${
+              <div  className={`h-full bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 ${
                 pkg.popular 
                   ? 'border-2 border-indigo-500 dark:border-indigo-400 shadow-indigo-100 dark:shadow-none'
                   : 'border border-gray-100 dark:border-gray-700'
               }`}>
-                <div className="p-8">
+                <div data-aos="fade-up" className="p-8">
                   <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto transform group-hover:rotate-6 transition-transform duration-300">
                     <pkg.icon className="w-8 h-8 text-white" />
                   </div>

@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -24,7 +27,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative h-screen">
+    <div  className="relative h-screen">
       {slides.map((slide, index) => (
         <div
           key={slide}
@@ -41,7 +44,7 @@ const Hero = () => {
         </div>
       ))}
 
-      <div className="relative h-full flex items-center justify-center text-center">
+      <div data-aos="zoom-in" className="relative h-full flex items-center justify-center text-center">
         <div className="max-w-3xl px-4">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Capturing Life's Beautiful Moments

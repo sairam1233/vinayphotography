@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Camera, Users, Image, Package, Heart, Video, Aperture, MapPin } from 'lucide-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const Services = () => {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -59,11 +62,11 @@ const Services = () => {
     <section id="services" className="py-20 bg-gradient-to-b from-white via-indigo-50/50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 relative inline-block">
+          <h2 data-aos="fade-up" className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 relative inline-block">
             Our Services
             <div className="absolute -bottom-4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-8">
+          <p data-aos="fade-up" className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-8">
             Professional photography services tailored to your needs. We combine technical expertise
             with creative vision to deliver exceptional results.
           </p>
@@ -72,6 +75,7 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div
+              data-aos="fade-up"
               key={index}
               className="relative group"
               onMouseEnter={() => setHoveredService(index)}
